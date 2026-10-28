@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://v0euubcnsnmi"]
+
+[ext_resource type="Script" uid="uid://cm4cligc6dq73" path="res://MainMenu_2.cs" id="1_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://ny718x5uaa87" path="res://2D_pixelart_starfield_detail_image.png" id="2_jix8l"]
+[ext_resource type="Texture2D" uid="uid://b8qteybqrcexv" path="res://play_but_icon.svg" id="3_glbon"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n64fp"]
+texture = ExtResource("2_jix8l")
+
+[sub_resource type="Theme" id="Theme_ahfwt"]
+
+[node name="MainMenu" type="Control" unique_id=652944983]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fu7sn")
+
+[node name="Panel" type="Panel" parent="." unique_id=261888099]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_n64fp")
+
+[node name="Play_Button" type="Button" parent="." unique_id=842900600]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ahfwt")
+icon = ExtResource("3_glbon")
+expand_icon = true
+
+[connection signal="pressed" from="Play_Button" to="." method="_on_play_button_pressed"]

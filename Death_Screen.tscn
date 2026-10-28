@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://bm5uils8o75r8"]
+
+[ext_resource type="Script" uid="uid://wxw3jwtrm0n8" path="res://DeathScreen.cs" id="1_u72g6"]
+[ext_resource type="FontFile" uid="uid://ixnqqqw6g8wi" path="res://Youmurdererbb-pwoK.otf" id="2_ghglt"]
+[ext_resource type="Texture2D" uid="uid://cgw1b2lnwv7yt" path="res://Scenes/AF_fjVou.png" id="2_q76g3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n64fp"]
+font = ExtResource("2_ghglt")
+font_size = 52
+font_color = Color(0.96862745, 0.20392157, 0.16862746, 1)
+outline_color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+shadow_color = Color(0, 0, 0, 0.45882353)
+
+[sub_resource type="LabelSettings" id="LabelSettings_q76g3"]
+font_color = Color(0.96862745, 0.20392157, 0.16862746, 1)
+
+[sub_resource type="Theme" id="Theme_52ebn"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1141551120]
+process_mode = 3
+layer = 15
+script = ExtResource("1_u72g6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1912732498]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+mouse_filter = 2
+color = Color(0.007843138, 0.007843138, 0.007843138, 0.52156866)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect" unique_id=1002048608]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -217.5
+offset_top = -124.0
+offset_right = 217.5
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer" unique_id=1971574991]
+modulate = Color(1, 1, 1, 0.49803922)
+self_modulate = Color(1, 1, 1, 0.4509804)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=36020801]
+layout_mode = 2
+text = "YOU FAILED YOUR MISSION"
+label_settings = SubResource("LabelSettings_n64fp")
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="ColorRect/MarginContainer/VBoxContainer" unique_id=1598382229]
+unique_name_in_owner = true
+layout_mode = 2
+label_settings = SubResource("LabelSettings_q76g3")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect" unique_id=1351299267]
+layout_mode = 0
+offset_left = 391.0
+offset_top = 292.0
+offset_right = 752.0
+offset_bottom = 351.0
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/HBoxContainer" unique_id=2028574246]
+modulate = Color(0.4417108, 0.06923895, 0.052902482, 1)
+custom_maximum_size = Vector2(57, 57)
+layout_mode = 2
+mouse_filter = 2
+theme = SubResource("Theme_52ebn")
+texture = ExtResource("2_q76g3")
+
+[node name="RetryButton" type="Button" parent="ColorRect/HBoxContainer/TextureRect" unique_id=1345722328]
+custom_minimum_size = Vector2(60, 60)
+custom_maximum_size = Vector2(60, 60)
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 60.0
+theme_override_colors/icon_normal_color = Color(0.96862745, 0.20392157, 0.16862746, 1)
+action_mode = 0
+
+[node name="TextureRect2" type="TextureRect" parent="ColorRect/HBoxContainer" unique_id=1092291520]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Button" type="Button" parent="ColorRect/HBoxContainer/TextureRect2" unique_id=1365227745]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="ColorRect/HBoxContainer/TextureRect/RetryButton" to="." method="_on_retry_button_pressed"]

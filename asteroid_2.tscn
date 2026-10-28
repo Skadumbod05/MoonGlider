@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bde2wfq4le6se"]
+
+[ext_resource type="Script" uid="uid://cq7xqes3rxbt3" path="res://Asteroid2.cs" id="1_7fb3u"]
+[ext_resource type="Texture2D" uid="uid://bogmjiruoek7b" path="res://asteroid-1.svg" id="1_yv0hr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4srsv"]
+
+[node name="Area2D" type="Area2D" unique_id=2102893092]
+script = ExtResource("1_7fb3u")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1187692618]
+modulate = Color(0.93474466, 0.66785324, 0.48156762, 1)
+scale = Vector2(0.062, 0.064)
+texture = ExtResource("1_yv0hr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1714945232]
+scale = Vector2(1.7, 1.7)
+shape = SubResource("CircleShape2D_4srsv")
+
+[connection signal="area_entered" from="." to="." method="_on_area2_entered"]
